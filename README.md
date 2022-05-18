@@ -1,8 +1,8 @@
 # Cats
 
-<p align="center">
-  <img alt="Cats" src=".github/cover.png" width="160px">
-</p>
+<h1 align="center">
+  <img alt="Cats" src=".github/cover.png" >
+</h1>
 
 # Motivação
 
