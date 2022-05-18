@@ -10,8 +10,8 @@ This is a toy-project created to learn concepts regarding WEB development and so
 
 # Tecnologias
 
-This project was developed used this tools:
+This project was developed used the following tools:
 
-- [Angular]("https://angular.io/")
-- [Bootstrap]("https://getbootstrap.com/")
-- [Typescript]("https://www.typescriptlang.org/")
+- [Angular](https://angular.io/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Typescript](https://www.typescriptlang.org/)
