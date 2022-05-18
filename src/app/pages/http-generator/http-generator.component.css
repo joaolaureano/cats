@@ -1,0 +1,11 @@
+button {
+  margin-bottom: 10px;
+}
+img {
+  max-width: 75%;
+}
+.position {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

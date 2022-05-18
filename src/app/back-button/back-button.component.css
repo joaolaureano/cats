@@ -1,9 +1,0 @@
-/* *{
-    float:left;
-    backgroun
-} */
-
-button:hover {background-color: gray;}
-button:active {
-    transform: translateY(4px);
-  }
