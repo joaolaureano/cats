@@ -1,16 +1,16 @@
 # Cats
 
 <p align="center">
-  <img alt="Cats" src=".github/main_screen.png" width="160px">
+  <img alt="Cats" src=".github/cover.png" width="160px">
 </p>
 
 # Motivação
 
-Esse projeto foi desenvolvido como uma forma de aprender e treinar conceitos tecnologias de desenvolvimento WEB.
+This is a toy-project created to learn concepts regarding WEB development and some famous tools.
 
 # Tecnologias
 
-Foi desenvolvido com as seguintes tecnologias:
+This project was developed used this tools:
 
 - [Angular]("https://angular.io/")
 - [Bootstrap]("https://getbootstrap.com/")
