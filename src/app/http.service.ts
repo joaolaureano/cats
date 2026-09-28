@@ -1,23 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface CatImage {
+  id: string;
+  url: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
 
-   imagesEndPoint = "https://aws.random.cat/meow";
-   httpEndPoint = "https://http.cat/";
+  // aws.random.cat went offline; TheCatAPI serves up to 10 images per call without an API key
+  imagesEndPoint = "https://api.thecatapi.com/v1/images/search";
 
-   catEndPoint = "http://aws.random.cat/meow";
   constructor(private http: HttpClient) { }
-  getImage() {
-    return this.http.get(this.imagesEndPoint);
+
+  getImage(): Observable<CatImage[]> {
+    return this.http.get<CatImage[]>(this.imagesEndPoint);
   }
-  getHttpImage(code) {
-    return this.http.get(this.httpEndPoint + code);
-  }
-  getCat(){
-    return this.http.get(this.catEndPoint);
+
+  getCats(limit = 10): Observable<CatImage[]> {
+    return this.http.get<CatImage[]>(this.imagesEndPoint, { params: { limit } });
   }
 }

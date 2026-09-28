@@ -18,16 +18,18 @@
     </button>
   </div>
 </div>
-<div *ngIf="imagesUrl.length != 0">
+@if (imagesUrl.length != 0) {
+<div>
   <h1 class="text-center">THE CUTTEST IMAGES EVA</h1>
 </div>
+}
 <div class="d-flex w-100 align-items-center justify-content-center flex-wrap">
-  <img
-    *ngFor="let image of imagesUrl"
-    src="{{ image }}"
-    class="w-25 mb-2 ml-5"
-  />
+  @for (image of imagesUrl; track $index) {
+  <img src="{{ image }}" class="w-25 mb-2 ms-5" />
+  }
 </div>
-<div class="spinner-container" *ngIf="spinnerActive">
+@if (spinnerActive) {
+<div class="spinner-container">
   <img src="{{ nyan_cat }}" />
 </div>
+}
