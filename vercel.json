@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npx ng build",
+  "outputDirectory": "dist/cats/browser",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}

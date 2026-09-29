@@ -8,6 +8,8 @@
 
 # Cats
 
+**Live:** https://cats-lyart-tau.vercel.app
+
 A small Angular app full of cats. I built it in college as a toy project to learn web development: components, routing, HTTP calls, interceptors and Bootstrap.
 
 ## Features
