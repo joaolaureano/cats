@@ -10,6 +10,8 @@
 
 **Live:** https://cats-lyart-tau.vercel.app
 
+> This repository is archived. The app still runs and stays online at the link above.
+
 A small Angular app full of cats. I built it in college as a toy project to learn web development: components, routing, HTTP calls, interceptors and Bootstrap.
 
 ## Features

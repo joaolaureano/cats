@@ -10,6 +10,8 @@
 
 **No ar:** https://cats-lyart-tau.vercel.app
 
+> Este repositório está arquivado. O app continua funcionando e no ar no link acima.
+
 Um pequeno app Angular cheio de gatos. Fiz na faculdade, como projeto de brinquedo para aprender desenvolvimento web: componentes, rotas, chamadas HTTP, interceptors e Bootstrap.
 
 ## Funcionalidades
