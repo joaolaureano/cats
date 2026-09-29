@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, signal } from "@angular/core";
 import { HttpService } from "../../http.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { HttpService } from "../../http.service";
   styleUrls: ["./cats-full-screen.component.css"],
 })
 export class CatsFullScreenComponent implements OnInit {
-  groupCat: string[] = [];
+  groupCat = signal<string[]>([]);
   constructor(private http: HttpService) {}
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class CatsFullScreenComponent implements OnInit {
   generateCat() {
     for (let i = 0; i < 5; i++)
       this.http.getCats(10).subscribe((res) => {
-        this.groupCat.push(...res.map((cat) => cat.url));
+        this.groupCat.update((cats) => [...cats, ...res.map((cat) => cat.url)]);
       });
   }
 }

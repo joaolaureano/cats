@@ -2,7 +2,6 @@ import { BrowserModule } from "@angular/platform-browser";
 import {
   NgModule,
   provideBrowserGlobalErrorListeners,
-  provideZoneChangeDetection,
 } from "@angular/core";
 import {
   HTTP_INTERCEPTORS,
@@ -30,7 +29,6 @@ import { SpinnerInterceptorService } from "./services/spinner-interceptor-servic
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
     provideHttpClient(withInterceptorsFromDi()),
     {
       provide: HTTP_INTERCEPTORS,

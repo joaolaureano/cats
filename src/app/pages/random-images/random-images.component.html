@@ -1,7 +1,7 @@
 <app-back-button class="position"></app-back-button>
 <div class="d-flex align-items-center flex-column">
   <h2>AWESOMEST CATZ GENERATOR!!!!11</h2>
-  <img class="img-fluid w-75 mw-75 my-2" src="{{ randomimage }}" />
+  <img class="img-fluid w-75 mw-75 my-2" src="{{ randomimage() }}" />
   <div class="d-flex flex-row gap">
     <button class="btn bg-dark text-white" (click)="generateImg()">
       Generate another FUNNYZ IMAGE LOL (☞ﾟヮﾟ)☞
@@ -10,7 +10,7 @@
       OWN SAVE THAT ฅ^•ﻌ•^ฅ
     </button>
     <button
-      [disabled]="!imagesUrl.length"
+      [disabled]="!imagesUrl().length"
       class="btn bg-dark text-white"
       (click)="deleteImage()"
     >
@@ -18,17 +18,17 @@
     </button>
   </div>
 </div>
-@if (imagesUrl.length != 0) {
+@if (imagesUrl().length != 0) {
 <div>
   <h1 class="text-center">THE CUTTEST IMAGES EVA</h1>
 </div>
 }
 <div class="d-flex w-100 align-items-center justify-content-center flex-wrap">
-  @for (image of imagesUrl; track $index) {
+  @for (image of imagesUrl(); track $index) {
   <img src="{{ image }}" class="w-25 mb-2 ms-5" />
   }
 </div>
-@if (spinnerActive) {
+@if (spinnerActive()) {
 <div class="spinner-container">
   <img src="{{ nyan_cat }}" />
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, signal } from "@angular/core";
 import { SpinnerHandlerService } from "../../services/spinner-handler-service";
 import { HttpService } from "../../http.service";
 @Component({
@@ -8,31 +8,31 @@ import { HttpService } from "../../http.service";
   styleUrls: ["./random-images.component.css"],
 })
 export class RandomImagesComponent implements OnInit {
-  randomimage = "assets/FUNNYCAT.jpg";
+  randomimage = signal("assets/FUNNYCAT.jpg");
   nyan_cat = "assets/nyan_cat.gif";
-  spinnerActive: boolean = true;
+  spinnerActive = signal(false);
   constructor(
     public spinnerHandler: SpinnerHandlerService,
     private serviceImage: HttpService
   ) {
     this.spinnerHandler.showSpinner.subscribe(this.showSpinner.bind(this));
   }
-  imagesUrl: string[] = [];
+  imagesUrl = signal<string[]>([]);
   ngOnInit() {}
 
   generateImg() {
     this.serviceImage.getImage().subscribe((res) => {
-      this.randomimage = res[0].url;
+      this.randomimage.set(res[0].url);
     });
   }
   saveImage() {
-    this.imagesUrl.push(this.randomimage);
+    this.imagesUrl.update((urls) => [...urls, this.randomimage()]);
   }
   deleteImage() {
-    this.imagesUrl.splice(-1, 1);
+    this.imagesUrl.update((urls) => urls.slice(0, -1));
   }
 
   showSpinner(state: boolean) {
-    this.spinnerActive = state;
+    this.spinnerActive.set(state);
   }
 }
